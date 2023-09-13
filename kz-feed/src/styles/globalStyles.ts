@@ -24,5 +24,17 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    
+    html, body{
+        font-family: 'Lora', serif;
+    }
+
+    button, input, input::placeholder, img{
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+    }
+
+    li{
+        list-style: none;
+    }
+
 `
