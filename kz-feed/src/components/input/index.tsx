@@ -1,10 +1,13 @@
+import { StyledInput } from "../../styles/input";
+
 interface IInputProps {
     placeholder: string,
     type: string;
+    inputsize: "medium" | "big";
 }
 
-export const Input = ({placeholder, type}: IInputProps) => {
+export const Input = ({placeholder, type, inputsize}: IInputProps) => {
     return( 
-        <input placeholder={placeholder} type = {type}/>
+        <StyledInput inputsize = {inputsize} placeholder={placeholder} type = {type}/>
     )
 }
