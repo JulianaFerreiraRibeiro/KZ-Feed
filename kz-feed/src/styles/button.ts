@@ -1,12 +1,12 @@
 import { ButtonHTMLAttributes } from "react";
 import styled, { css } from "styled-components";
 
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
+interface IStyledButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     buttonsize: "small" | "medium" | "big";
     buttonstyle: "outline" | "noneoutline"
 }
 
-export const StyledButton = styled.button<IButtonProps>`
+export const StyledButton = styled.button<IStyledButtonProps>`
     border-radius: .25rem;
     font-size: var(--font-size-6);
     font-weight: 43.75rem;

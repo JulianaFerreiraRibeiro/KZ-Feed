@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 
-interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement>{
+interface IStyledInputProps extends React.InputHTMLAttributes<HTMLInputElement>{
     inputsize: "medium" | "big";
 }
 
-export const StyledInput = styled.input<IInputProps>`
+export const StyledInput = styled.input<IStyledInputProps>`
     width: 23.125rem;
     border-radius: .25rem;
     border: 1px solid rgba(0, 0, 0, 0.5);
