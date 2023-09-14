@@ -1,9 +1,10 @@
 import { ParagraphOne } from "../typography"
+import { StyledFooter } from "./style"
 
 export const Footer = () => {
     return (
-        <footer>
+        <StyledFooter>
             <ParagraphOne>Todos os direitos reservados - Juliana Ferreira Ribeiro</ParagraphOne>
-        </footer>
+        </StyledFooter>
     )
 }

@@ -4,9 +4,9 @@ export const StyledRegisterSection = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 3.125rem;
     padding-left: 11.875rem;
     gap: 100px;
+    height: 100vh;
 
     button{
         width: 6.6875rem;
