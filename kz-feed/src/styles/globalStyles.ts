@@ -26,6 +26,7 @@ export const GlobalStyles = createGlobalStyle`
 
     html, body{
         font-family: 'Lora', serif;
+        overflow-x: hidden;
 
     }
 
