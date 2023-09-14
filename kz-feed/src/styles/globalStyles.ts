@@ -38,6 +38,12 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Inter', sans-serif;
     }
 
+    a{ 
+        font-family: 'Inter', sans-serif;
+        font-size: var(--font-size-6);
+        font-weight: var(--font-weight-1);
+    }
+
     li{
         list-style: none;
     }

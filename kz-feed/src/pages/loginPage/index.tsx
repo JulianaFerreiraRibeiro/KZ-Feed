@@ -1,6 +1,6 @@
 import { LoginForm } from "../../components/loginForm"
 import loginBanner from "../../assets/login_banner.svg"
-import { StyledLoginSection } from "./styles"
+import { StyledLoginSection } from "./style"
 
 export const LoginPage = () => {
     return(

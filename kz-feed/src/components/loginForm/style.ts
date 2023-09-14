@@ -31,7 +31,6 @@ export const StyledLoginFormContainer = styled.section`
         align-items: center;
 
         a{
-            font-family: 'Inter', sans-serif;
             color: var(--color-blue);
         }
     }
