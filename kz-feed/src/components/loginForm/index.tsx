@@ -35,7 +35,7 @@ export const LoginForm = () => {
                 </form>
                 <section className="loginFormFooter">
                     <ParagraphOne>Não é cadastrado?</ParagraphOne>
-                    <Link to = "/">Cadastre-se</Link>
+                    <Link to = "/register">Cadastre-se</Link>
                 </section>
             </StyledLoginFormContainer>
         </>
