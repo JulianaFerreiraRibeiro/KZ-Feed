@@ -4,6 +4,7 @@ import { SessionProvider } from "./providers/sessionContext"
 import { AppRoutes } from "./routes"
 import { GlobalStyles } from "./styles/globalStyles"
 import 'react-toastify/dist/ReactToastify.css';
+import { UserProvider } from "./providers/userContext"
 
 
 function App() {
@@ -12,8 +13,10 @@ function App() {
     <>
       <GlobalStyles/>
       <SessionProvider>
-        <ToastContainer/>
-        <AppRoutes/>
+        <UserProvider>
+          <ToastContainer/>
+          <AppRoutes/>
+        </UserProvider>
       </SessionProvider>
       <Footer/>
     </>

@@ -6,7 +6,7 @@ interface IUserProviderProps{
     children: ReactNode;
 }
 
-interface IPosts{
+export interface IPosts{
     title: string;
     description: string;
     owner: string;
