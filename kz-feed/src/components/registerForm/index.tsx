@@ -6,7 +6,7 @@ import { IRegisterFormValues, schema } from "./registerSchema";
 import { StyledRegisterFormContainer } from "./style"
 import { useForm } from 'react-hook-form';
 
-interface IRegisterFormData{
+export interface IRegisterFormData{
     name: string;
     email: string;
     password: string;
