@@ -26,10 +26,15 @@ export const GlobalStyles = createGlobalStyle`
 
     html, body{
         font-family: 'Lora', serif;
+
     }
 
     button, input, input::placeholder, img{
+        font-family: 'Inter', sans-serif;
         cursor: pointer;
+    }
+
+    p{
         font-family: 'Inter', sans-serif;
     }
 
