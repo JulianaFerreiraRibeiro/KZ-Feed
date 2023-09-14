@@ -4,7 +4,10 @@ import { Input } from "../input"
 import { ParagraphOne, TitleTwo } from "../typography"
 import { IRegisterFormValues, schema } from "./registerSchema";
 import { StyledRegisterFormContainer } from "./style"
-import { useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form'
+import { useContext } from "react"
+import { SessionContext } from "../../providers/sessionContext";
+
 
 export interface IRegisterFormData{
     name: string;
@@ -18,8 +21,11 @@ export const RegisterForm = () => {
         resolver: zodResolver(schema)
     })
 
+    const {handleRegister} = useContext(SessionContext)
+
     const submit = async (formData: IRegisterFormData) => {
         console.log(formData)
+        await handleRegister(formData)
     }
     return(
         <StyledRegisterFormContainer>
