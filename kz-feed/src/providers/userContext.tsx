@@ -15,7 +15,11 @@ interface IPosts{
     image: string;
 }
 
-export const UserContext = createContext({})
+interface IUserContext{
+    posts: IPosts[]
+}
+
+export const UserContext = createContext({} as IUserContext)
 
 export const UserProvider = ({children}: IUserProviderProps) => {
     const [posts, setPosts] = useState<IPosts[]>([])
@@ -34,7 +38,7 @@ export const UserProvider = ({children}: IUserProviderProps) => {
     }, [])
 
     return(
-        <UserContext.Provider value={{}}>
+        <UserContext.Provider value={{posts}}>
             {children}
         </UserContext.Provider>
     )
