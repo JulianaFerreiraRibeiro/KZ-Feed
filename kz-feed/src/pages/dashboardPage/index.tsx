@@ -2,8 +2,13 @@ import { ParagraphOne, ParagraphTwo, TitleOne, TitleTwo } from "../../components
 import dashboard_banner from "../../assets/dashboard_banner.svg"
 import { Button } from "../../components/button"
 import { StyledDashboardSection } from "./style"
+import { useContext } from "react"
+import { UserContext } from "../../providers/userContext"
+import { PostCard } from "../../components/postsCard"
 
 export const DashboardPage = () => {
+    const {posts} = useContext(UserContext)
+
     return(
         <StyledDashboardSection>
             <section className="dashboardHeader">
@@ -18,7 +23,7 @@ export const DashboardPage = () => {
             </section>
                 <section>
                     <ul>
-                        
+                        {posts.map(post => <PostCard post = {post} key={post.id}/>)}
                     </ul>
                 </section>
         </StyledDashboardSection>
