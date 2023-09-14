@@ -6,6 +6,8 @@ import { StyledLoginFormContainer } from "./style"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ILoginFormValues, schema } from "./loginSchema"
+import { useContext } from "react"
+import { SessionContext } from "../../providers/sessionContext"
 
 export interface ILoginFormData{
     email: string;
@@ -17,8 +19,11 @@ export const LoginForm = () => {
         resolver: zodResolver(schema)
     })
 
+    const {handleLogin} = useContext(SessionContext)
+
     const submit = async (formData: ILoginFormData): Promise<void> => {
         console.log(formData)
+        await handleLogin(formData)
     }
 
     return(
