@@ -6,6 +6,7 @@ export const StyledRegisterSection = styled.section`
     justify-content: center;
     padding-top: 3.125rem;
     padding-left: 11.875rem;
+    gap: 100px;
 
     button{
         width: 6.6875rem;
