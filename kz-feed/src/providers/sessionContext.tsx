@@ -1,6 +1,7 @@
 import { ReactNode, createContext } from "react"
-import { IRegisterFormData } from "../components/registerForm";
-import { api } from "../services/api";
+import { IRegisterFormData } from "../components/registerForm"
+import { api } from "../services/api"
+
 
 interface ISessionProviderProps{
     children: ReactNode;
@@ -18,6 +19,7 @@ export const SessionProvider = ({children}: ISessionProviderProps) => {
         try{
             const {data} = await api.post("/users", formData)
             console.log(data)
+            toast.success("Registro realizado com sucesso")
         } catch (error) {
             console.log(error)
         }
