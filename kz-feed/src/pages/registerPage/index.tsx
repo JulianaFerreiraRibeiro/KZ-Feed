@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { Button } from "../../components/button"
 import arrow from "../../assets/blue_arrow.svg"
 import { StyledRegisterSection } from "./style"
+import { RegisterForm } from "../../components/registerForm"
 
 export const RegisterPage = () => {
     return(
@@ -12,6 +13,7 @@ export const RegisterPage = () => {
                     Voltar
                 </Button>
             </Link>
+            <RegisterForm/>
         </StyledRegisterSection>
     )
 }
