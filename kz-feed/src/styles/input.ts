@@ -8,6 +8,7 @@ export const StyledInput = styled.input<IStyledInputProps>`
     width: 23.125rem;
     border-radius: .25rem;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 15px;
     
     ${({inputsize}) => {
         switch(inputsize){
