@@ -6,7 +6,11 @@ interface IAdminProviderProps{
     children: ReactNode;
 }
 
-export const AdminContext = createContext({})
+interface IUserContext{
+    adminPosts: IPosts[]
+}
+
+export const AdminContext = createContext({} as IUserContext)
 
 export const AdminProvider = ({children}: IAdminProviderProps) => {
     const [adminPosts, setAdminPosts] = useState<IPosts[]>([])
@@ -23,7 +27,7 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
         getPosts()
     }, [])
     return(
-        <AdminContext.Provider value={{}}>
+        <AdminContext.Provider value={{adminPosts}}>
             {children}
         </AdminContext.Provider>
     )
