@@ -1,6 +1,6 @@
-import { createContext, useEffect, useState } from 'react';
-import { ReactNode } from 'react';
-import { api } from '../services/api';
+import { createContext, useEffect, useState } from 'react'
+import { ReactNode } from 'react'
+import { api } from '../services/api'
 
 interface IUserProviderProps{
     children: ReactNode;
