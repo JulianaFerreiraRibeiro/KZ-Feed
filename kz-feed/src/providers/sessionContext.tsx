@@ -39,6 +39,7 @@ export const SessionProvider = ({children}: ISessionProviderProps) => {
             console.log(data)
             navigate("/adminDashboard")
             toast.success("Login realizado com sucesso!")
+            localStorage.setItem("@token:KZFeed", data.accessToken)
         } catch (error) {
             console.log(error)
             toast.error("Credenciais erradas!")
