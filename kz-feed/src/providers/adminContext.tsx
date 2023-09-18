@@ -26,6 +26,19 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
         }
         getPosts()
     }, [])
+
+    const createPost = async (formData) => {
+        try{
+            const {data} = await api.post("/posts", formData, {
+                headers: {
+                    Authorization: `Bearer`
+                }
+            })
+            setAdminPosts([...adminPosts, data])
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return(
         <AdminContext.Provider value={{adminPosts}}>
             {children}
