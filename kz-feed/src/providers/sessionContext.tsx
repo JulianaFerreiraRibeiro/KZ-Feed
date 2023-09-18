@@ -1,4 +1,4 @@
-import { ReactNode, createContext } from "react"
+import { ReactNode, createContext, useState } from "react"
 import { IRegisterFormData } from "../components/registerForm"
 import { api } from "../services/api"
 import { toast } from "react-toastify"
@@ -10,15 +10,25 @@ interface ISessionProviderProps{
     children: ReactNode;
 }
 
+interface IAdmin{
+    acessToken: string
+    user: {
+        email: string
+        name: string
+        id: number
+    }
+}
+
 interface ISessionContext{
     handleRegister: (formData: IRegisterFormData) => Promise<void>;
     handleLogin: (formData: ILoginFormData) => Promise<void>;
+    admin: IAdmin | null
 }
 
 export const SessionContext = createContext({} as ISessionContext)
 
 export const SessionProvider = ({children}: ISessionProviderProps) => {
-
+    const [admin, setAdmin] = useState<IAdmin | null>(null)
     const navigate = useNavigate()
 
     const handleRegister = async (formData: IRegisterFormData) => {
@@ -36,7 +46,7 @@ export const SessionProvider = ({children}: ISessionProviderProps) => {
     const handleLogin = async (formData: ILoginFormData) => {
         try{
             const {data} = await api.post("/login", formData)
-            console.log(data)
+            setAdmin(data)
             navigate("/adminDashboard")
             toast.success("Login realizado com sucesso!")
             localStorage.setItem("@token:KZFeed", data.accessToken)
@@ -47,7 +57,7 @@ export const SessionProvider = ({children}: ISessionProviderProps) => {
         }
     }
     return(
-        <SessionContext.Provider value={{handleRegister, handleLogin}}>
+        <SessionContext.Provider value={{handleRegister, handleLogin, admin}}>
             {children}
         </SessionContext.Provider>
     )
